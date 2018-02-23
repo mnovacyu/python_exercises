@@ -1,1 +1,2 @@
-# python_exercises
+# Info
+Collection of Python related exercises
