@@ -1,3 +1,5 @@
+# Flask exercises for interpreting GET and POST requests
+
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -23,14 +25,14 @@ def profile(username):
 def show_post(post_id):
     return "<h2>Post ID is %s</h2>" % post_id
 
-# POST 
+# POST method, add as a parameter to the route
 @app.route("/bacon", methods=['GET', 'POST'])
 def bacon():
     if request.method == 'POST':
         return "You are using POST"
     else:
         return "You are probably using GET"
-        
+
 
 if __name__ == "__main__":
     app.run(debug=True)
