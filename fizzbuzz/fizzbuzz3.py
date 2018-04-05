@@ -3,7 +3,7 @@ def FizzBuzz(num):
         tests = {3: "Fizz", 5: "Buzz", 7: "Poop"}
         output = ""
 
-        for key, value in tests.iteritems():
+        for key, value in tests.items():
             if (x % key == 0):
                 output += value
 
@@ -13,4 +13,4 @@ def FizzBuzz(num):
         print(output)
 
 
-FizzBuzz(20)
+FizzBuzz(100)
