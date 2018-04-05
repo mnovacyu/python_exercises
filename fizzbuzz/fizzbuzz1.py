@@ -1,5 +1,8 @@
 # Weakness here is that code is repeated and brittle.
 # Also difficult to scale.
+
+#!/usr/bin/env python3
+
 def FizzBuzz(num):
     for x in range(1,num+1):
         if (x % 3) == 0 and (x % 5) == 0:

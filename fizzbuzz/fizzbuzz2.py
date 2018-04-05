@@ -1,4 +1,7 @@
 # While better than v1, still is repeating code. Can be improved.
+
+#!/usr/bin/env python3
+
 def FizzBuzz(num):
     for x in range(1, num+1):
         

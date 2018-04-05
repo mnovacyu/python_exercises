@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def FizzBuzz(num):
     for x in range(1, num+1):
         tests = {3: "Fizz", 5: "Buzz", 7: "Poop"}
