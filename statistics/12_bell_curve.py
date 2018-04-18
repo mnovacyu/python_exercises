@@ -16,7 +16,6 @@ def variance(data):
 def stddev(data):
     return sqrt(variance(data))
     
-
 def flip(N):
     return [random.random()>0.5 for x in range(N)]
     
