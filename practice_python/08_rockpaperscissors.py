@@ -4,7 +4,12 @@ import sys
 def initGame():
     global moves
 
-    moves = ["R", "P", "S"]
+    moves = {
+        "R": "S",
+        "P": "R",
+        "S": "R",
+        "B": ["R", "P", "S"]}
+
     print("New Game!")
 
 def getInput(player):
@@ -24,10 +29,7 @@ def getInput(player):
 def pickWinner(input1, input2):
     if (input1 == input2):
         print("Tie!\n")
-    elif ([input1, input2]
-            == (["R", "S"]
-            or ["S", "P"]
-            or ["P", "R"])):
+    elif input2 in moves[input1]:
         print("Player 1 Wins!\n")
     else:
         print("Player 2 Wins!\n")
