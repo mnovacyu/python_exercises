@@ -31,11 +31,21 @@ def getInput(player):
 # Figure out who the winner is
 def pickWinner(input1, input2):
     if (input1 == input2):
-        print("Tie!\n")
+        print("Tie!")
     elif input2 in moves[input1]:
-        print("Player 1 Wins!\n")
+        print("Player 1 Wins!")
     else:
-        print("Player 2 Wins!\n")
+        print("Player 2 Wins!")
+
+def playAgain():
+    player_input = ""
+    player_input = input("Play again? (Y/N): ")
+
+    if player_input.upper() == "Y":
+        print("")
+        return True
+    else:
+        sys.exit()
 
 # Get the game going!
 while True:
@@ -45,3 +55,5 @@ while True:
     input2 = getInput("Player 2")
 
     pickWinner(input1, input2)
+
+    playAgain()
