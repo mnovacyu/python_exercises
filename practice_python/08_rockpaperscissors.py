@@ -8,7 +8,7 @@ def initGame():
     moves = {
         "R": "S",
         "P": "R",
-        "S": "R",
+        "S": "P",
         "B": ["R", "P", "S"]}
 
     print("New Game!")
