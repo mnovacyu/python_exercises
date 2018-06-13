@@ -1,4 +1,11 @@
+# Simple Rock Paper Scissors game to practice loops and break statements
 import sys
+
+def initGame():
+    global moves
+
+    moves = ["R", "P", "S"]
+    print("New Game!")
 
 def getInput(player):
     player_input = ""
@@ -25,10 +32,10 @@ def pickWinner(input1, input2):
     else:
         print("Player 2 Wins!\n")
 
+# Get the game going
 while True:
-    moves = ["R", "P", "S"]
+    initGame()
 
-    print("New Game!")
     input1 = getInput("Player 1")
     input2 = getInput("Player 2")
 
