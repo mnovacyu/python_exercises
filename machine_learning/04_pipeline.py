@@ -9,15 +9,19 @@ y = iris.target # labels
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = .5)
 
-# Create classifier
+# Create decision tree classifier
 from sklearn import tree
 my_classifier = tree.DecisionTreeClassifier()
 
+# Use another classfier - K Nearest Neighbors
+from sklearn.neighbors import KNeighborsClassifier
+my_classifier2 = KNeighborsClassifier()
+
 # Train the classifier
-my_classifier.fit(X_train, y_train)
+my_classifier2.fit(X_train, y_train)
 
 # Test the classifier
-predictions = my_classifier.predict(X_test)
+predictions = my_classifier2.predict(X_test)
 print(predictions)
 
 # Calculate accuracy - compare classifier predictions to true results
