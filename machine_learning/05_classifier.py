@@ -5,6 +5,7 @@
         # Computationally intensive,
         # Hard to represent relationships between features
 
+# Custom implementation of KNN classifier
 from scipy.spatial import distance
 
 def euc(a,b):
