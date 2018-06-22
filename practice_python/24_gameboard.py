@@ -5,12 +5,13 @@ def draw_horizontal(size):
 def draw_vertical(size):
     print("|   " * (size+1))
 
-def draw_game_board(size):
-    for x in range(0, size):
-        draw_horizontal(size)
-        draw_vertical(size)
-    draw_horizontal(size) # close off the board
+def draw_game_board(length, height):
+    for x in range(height):
+        draw_horizontal(length)
+        draw_vertical(length)
+    draw_horizontal(length) # close off the board
 
 while True:
-    size = input("What sized game board would you like? ")
-    draw_game_board(int(size))
+    length = int(input("What length would you like? "))
+    height = int(input("What height would you like? "))
+    draw_game_board(length, height)
