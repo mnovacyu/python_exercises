@@ -19,7 +19,7 @@ def column_winner(board, column):
         list.append(board[x][column])
     return is_there_a_winner(list)
 
-# returns a LIST of diagonal winners
+# returns a *list* of diagonal winners
 def diag_winner(board):
     list = []
     diag1 = []
