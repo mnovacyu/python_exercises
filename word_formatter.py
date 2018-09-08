@@ -1,6 +1,6 @@
 '''
 This script will rotate the table_data and print with right_aligned columns.
-(Essentially a rewrite of the .rightjust method for strings)
+(Essentially a rewrite of the .rjust method for strings)
 
 FINAL OUTPUT:
   apples  Alice   dogs
