@@ -8,7 +8,6 @@ FINAL OUTPUT:
 cherries  Carol  moose
   banana  David  goose
 
-
 '''
 
 table_data = [['apples', 'oranges', 'cherries', 'banana'],
