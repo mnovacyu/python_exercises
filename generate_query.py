@@ -4,6 +4,9 @@
 Generates a where clause based on inputs of workbook, sheet, column1, and column2.
 Outputs to a 'Output.txt' file
 
+Requirements:
+    'pandas' and 'xlrd' pip packages
+
 Usage:
     python3 generate_query.py -w <workbook> -s <sheet> -c1 <column1> -c2 <column2>
     
@@ -14,12 +17,11 @@ Sample Output:
     ===
     Workbook='Example.xlsx', Sheet='Sheet1', Column1 = 'ReportingPopulationName', Column2 = 'HRChaseID':
     ===
-    ('ReportingPopulationName' = 'Michael' AND HRChaseID in ('Orange', 'Banana', 'Apple'))
-    OR ('ReportingPopulationName' = 'Cynthia' AND HRChaseID in ('Carrots', 'Potato', 'Cabbage'))
-    OR ('ReportingPopulationName' = 'Simon' AND HRChaseID in ('Car', 'House', 'Tree'))
+    (ReportingPopulationName = 'Michael' AND HRChaseID in ('Orange', 'Banana', 'Apple'))
+    OR (ReportingPopulationName = 'Cynthia' AND HRChaseID in ('Carrots', 'Potato', 'Cabbage'))
+    OR (ReportingPopulationName = 'Simon' AND HRChaseID in ('Car', 'House', 'Tree'))
 """
 
-# Requirements: 'pandas' and 'xlrd' pip packages
 import argparse
 from datetime import datetime
 import pandas as pd
@@ -52,9 +54,9 @@ def generate_query(workbook, sheet, column1, column2):
             else:
                 items += "'%s', " % item
         if i == 1:
-            where_clause += "('%s' = '%s' AND %s in %s)\n" % (column1, key, column2, items)
+            where_clause += "(P.ReportingPopulationName = '%s' AND C.HRChaseID IN %s)\n" % (key, items)
         else:
-            where_clause += "OR ('%s' = '%s' AND %s in %s)\n" % (column1, key, column2, items)
+            where_clause += "OR (P.ReportingPopulationName = '%s' AND C.HRChaseID IN %s)\n" % (key, items)
         i += 1
 
     # Write to output file
