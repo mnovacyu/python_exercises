@@ -57,6 +57,7 @@ def generate_query(workbook, sheet, column1, column2):
             where_clause += "OR ('%s' = '%s' AND %s in %s)\n" % (column1, key, column2, items)
         i += 1
 
+    # Write to output file
     with open("Output.txt", "a") as myfile:
         time = (str(datetime.now())).split('.')[0]
         myfile.write("=====\n%s\nWorkbook='%s', Sheet='%s', Column1 = '%s', Column2 = '%s':\n=====\n" % (time, workbook, sheet, column1, column2))
@@ -85,6 +86,7 @@ if __name__ == "__main__":
         column1 = args.column1
         column2 = args.column2
 
+        # Generate query
         generate_query(workbook, sheet, column1, column2)
     except Exception as e:
         print("Error: %s" % e)
