@@ -62,8 +62,9 @@ def generate_query(workbook, sheet, column1, column2):
     # Write to output file
     with open("Output.txt", "w") as myfile:
         time = (str(datetime.now())).split('.')[0]
-        myfile.write("=====\nDate Ran: %s\nWorkbook='%s', Sheet='%s', Column1 = '%s', Column2 = '%s':\n=====\n\n" % (time, workbook, sheet, column1, column2))
-        
+        myfile.write("=====\n")
+        myfile.write("Date Ran: %s\nWorkbook='%s', Sheet='%s', Column1 = '%s', Column2 = '%s':\n" % (time, workbook, sheet, column1, column2)) 
+        myfile.write("=====\n\n")    
         myfile.write("%s\n\n" % where_clause)
         myfile.close()
     
